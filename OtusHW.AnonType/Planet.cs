@@ -5,9 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program
+namespace OtusHW.AnonType
 {
-    class Planet
+    public class Planet
     {
         public Planet(string name, int number, int equator, Planet previousPlanet)
         {
