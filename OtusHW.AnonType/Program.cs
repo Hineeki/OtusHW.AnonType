@@ -38,7 +38,9 @@ namespace OtusHW.AnonType
             Console.WriteLine(asd.GetWithDelegate("Earth", asd.DelegateCounter));
             Console.WriteLine(asd.GetWithDelegate("Lemonia", asd.DelegateCounter));
             Console.WriteLine(asd.GetWithDelegate("Mars", asd.DelegateCounter));
-            Console.WriteLine(asd.GetWithDelegate("Mars", str => {
+            Console.WriteLine();
+
+            Console.WriteLine(asd.GetWithDelegate("Earth", s => {
                 counter.Increment();
 
                 if (counter.Value > 2)
@@ -48,7 +50,26 @@ namespace OtusHW.AnonType
                 }
                 return null;
             }));
+            Console.WriteLine(asd.GetWithDelegate("Lemonia", s => {
+                counter.Increment();
 
+                if (counter.Value > 2)
+                {
+                    counter.Reset();
+                    return ("Вы слишком часто спрашиваете.");
+                }
+                return null;
+            }));
+            Console.WriteLine(asd.GetWithDelegate("Mars", s => {
+                counter.Increment();
+
+                if (counter.Value > 2)
+                {
+                    counter.Reset();
+                    return ("Вы слишком часто спрашиваете.");
+                }
+                return null;
+            }));
             #endregion
         }
     }
